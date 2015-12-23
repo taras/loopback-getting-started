@@ -3,9 +3,9 @@ module.exports = function(app) {
     if (err) throw err;
  
     app.models.CoffeeShop.create([
-      {name: 'Bel Cafe', city: 'Vancouver', opens_at: 7, closes_at: 20},
-      {name: 'Three Bees Coffee House', city: 'San Mateo', opens_at: 1, closes_at: 6},
-      {name: 'Caffe Artigiano', city: 'Vancouver', opens_at: 20, closes_at: 24},
+      {name: 'Bel Cafe', city: 'Vancouver', opensAt: 7, closesAt: 20},
+      {name: 'Three Bees Coffee House', city: 'San Mateo', opensAt: 1, closesAt: 6},
+      {name: 'Caffe Artigiano', city: 'Vancouver', opensAt: 20, closesAt: 24},
     ], function(err, coffeeShops) {
       if (err) throw err;
  

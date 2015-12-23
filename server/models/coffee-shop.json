@@ -14,10 +14,10 @@
       "type": "string",
       "required": true
     },
-    "opens_at": {
+    "opensAt": {
       "type": "number"
     },
-    "closes_at": {
+    "closesAt": {
       "type": "number"
     }
   },

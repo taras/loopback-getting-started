@@ -35,5 +35,13 @@
   "CoffeeShop": {
     "dataSource": "postgresDS",
     "public": true
+  },
+  "review": {
+    "dataSource": "postgresDS",
+    "public": true
+  },
+  "reviewer": {
+    "dataSource": "postgresDS",
+    "public": true
   }
 }

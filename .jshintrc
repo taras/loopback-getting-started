@@ -17,5 +17,11 @@
   "unused": false,
   "trailing": true,
   "sub": true,
-  "maxlen": 120
+  "maxlen": 120,
+  "predef": [
+    "describe",
+    "it",
+    "expect",
+    "chai"
+  ]
 }

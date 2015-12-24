@@ -1,0 +1,5 @@
+{
+  "postgresDS": {
+    "connector": "memory"
+  }
+}

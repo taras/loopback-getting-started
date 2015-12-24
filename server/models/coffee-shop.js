@@ -5,7 +5,6 @@ module.exports = function(CoffeeShop) {
       CoffeeShop.findById( shopId, function (err, instance) {
           var opensAt = instance.opensAt;
           var closesAt = instance.closesAt;
-          console.log('Current hour is ' + hour);
           var response;
           if (hour > opensAt && hour < closesAt) {
             response = 'We are open for business.';
@@ -13,7 +12,6 @@ module.exports = function(CoffeeShop) {
             response = 'Sorry, we are closed. Open daily from 6am to 8pm.';
           }
           cb(null, response);
-          console.log(response);
       });
     };
   
@@ -21,7 +19,6 @@ module.exports = function(CoffeeShop) {
     CoffeeShop.findById( shopId, function (err, instance) {
         var response = 'Name of coffee shop is ' + instance.name;
         cb(null, response);
-        console.log(response);
     });
   };
   

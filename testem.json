@@ -1,0 +1,18 @@
+{
+    "framework": "mocha",
+    "src_files": [
+        "node_modules/chai/chai.js",
+        "server/*",
+        "test/bootstrap/index.js",
+        "test/*-test.js"
+    ],
+    "launchers": {
+        "node": {
+            "command": "NODE_ENV=test ./node_modules/.bin/mocha -r test/bootstrap/index.js -R spec test/*-test.js",
+            "protocal": "spec"
+        }
+    },
+    "launch_in_dev": [
+        "node"
+    ]
+}

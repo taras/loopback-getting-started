@@ -2,7 +2,7 @@
     "framework": "mocha",
     "src_files": [
         "node_modules/chai/chai.js",
-        "server/*",
+        "server/**/*.js",
         "test/bootstrap/index.js",
         "test/*-test.js"
     ],

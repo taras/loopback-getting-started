@@ -9,7 +9,7 @@ module.exports = function(CoffeeShop) {
           if (hour > opensAt && hour < closesAt) {
             response = 'We are open for business.';
           } else {
-            response = 'Sorry, we are closed. Open daily from 6am to 8pm.';
+            response = 'Sorry, we are closed. Open daily from ' + opensAt + ' to ' + closesAt + '.';
           }
           cb(null, response);
       });

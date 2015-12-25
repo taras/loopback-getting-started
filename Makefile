@@ -9,7 +9,7 @@ test:
 
 test-debug:
 	@NODE_ENV=test ./node_modules/.bin/mocha \
-    --debug-brk \
+    --debug \
 		--require ./test/bootstrap \
 		--reporter $(REPORTER) \
 		$(TESTS)

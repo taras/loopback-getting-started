@@ -7,6 +7,9 @@
     "pretest": "jshint .",
     "test": "make test"
   },
+  "engine": {
+    "node": "5.3.0"
+  },
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",

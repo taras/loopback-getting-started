@@ -32,15 +32,15 @@
     "dataSource": "db",
     "public": false
   },
-  "CoffeeShop": {
+  "Coffeeshop": {
     "dataSource": "postgresDS",
     "public": true
   },
-  "review": {
+  "Review": {
     "dataSource": "postgresDS",
     "public": true
   },
-  "reviewer": {
+  "Reviewer": {
     "dataSource": "postgresDS",
     "public": true
   }

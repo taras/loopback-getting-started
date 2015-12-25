@@ -1,11 +1,33 @@
-module.exports = function(app) {
-  app.dataSources.postgresDS.automigrate('CoffeeShop', function(err) {
-    if (err) throw err;
- 
-    app.models.CoffeeShop.create([
-      {name: 'Bel Cafe', city: 'Vancouver', opensAt: 7, closesAt: 20},
-      {name: 'Three Bees Coffee House', city: 'San Mateo', opensAt: 1, closesAt: 6},
-      {name: 'Caffe Artigiano', city: 'Vancouver', opensAt: 20, closesAt: 24},
-    ]);
-  });
+var RSVP = require('rsvp');
+var denodeify = RSVP.denodeify;
+var hash = RSVP.hash;
+
+var coffeeshopFixtures = require('../fixtures/Coffeeshop');
+var reviewerFixtures = require('../fixtures/Reviewer');
+var makeReviews = require('../fixtures/Review').makeReviews;
+
+module.exports = function(app) { 
+ var DS = app.dataSources.postgresDS;
+ var CoffeeshopModel = app.models.Coffeeshop;
+ var ReviewerModel = app.models.Reviewer;
+ var ReviewModel = app.models.Review;
+
+ return hash({
+   coffeeshops: create(DS, CoffeeshopModel, coffeeshopFixtures),
+   reviewers: create(DS, ReviewerModel, reviewerFixtures)
+ }).then(function(records){
+   return create(DS, ReviewModel, makeReviews(records));
+ });
 };
+
+module.exports.create = create;
+
+function create(DS, model, fixtures) {
+  var _automigrate = denodeify(DS.automigrate.bind(DS));  
+  var _create = denodeify(model.create.bind(model));
+  
+  return _automigrate(model.modelName)
+    .then(function(){
+      return _create(fixtures);
+    });
+}

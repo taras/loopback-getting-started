@@ -17,6 +17,8 @@ module.exports = function(app) {
    reviewers: create(DS, ReviewerModel, reviewerFixtures)
  }).then(function(records){
    return create(DS, ReviewModel, makeReviews(records));
+ }).catch(function(reason){
+   console.error(reason);
  });
 };
 

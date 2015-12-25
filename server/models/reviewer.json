@@ -6,8 +6,12 @@
     "validateUpsert": true
   },
   "properties": {
-    "json_data": {
-      "type": "object",
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
       "required": true
     }
   },

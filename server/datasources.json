@@ -6,7 +6,7 @@
   "postgresDS": {
     "host": "127.0.0.1",
     "port": "5432",
-    "username": "taras",
+    "username": "",
     "password": "",
     "name": "postgresDS",
     "connector": "postgresql"
